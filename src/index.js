@@ -23,10 +23,14 @@ class Message extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.props.msg}</h1>
+        <h1 style={{ color: this.props.color }}>{this.props.msg}</h1>
+        <p>I'll be there in {this.props.minutes} minutes.</p>
       </div>
     )
   }
 }
 
-ReactDOM.render(<Message msg="How are you?" />, document.getElementById('root'))
+ReactDOM.render(
+  <Message minutes={5} color="teal" msg="How are you?" />,
+  document.getElementById('root')
+)
